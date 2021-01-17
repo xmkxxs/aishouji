@@ -1,0 +1,235 @@
+/*清除默认样式*/
+*{
+    margin:0;
+    padding:0;
+}
+/*防止右侧有留白
+html{
+    width:100%;
+    overflow-x:hidden;
+}
+*/
+
+/*设置nav，防止与下面同级的div出现空隙*/
+#nav01{
+  margin:0;padding:0
+}
+/*垂直分割线|不可被选中和其他一个nbsp不能被选中*/
+#notAllowedToSelect{
+    -webkit-user-select:none;
+    -moz-user-select:none;
+    -ms-user-select:none;
+    user-select:none;
+    font-size:14px;
+}
+#allowedToSelect{
+  font-size:14px;
+}
+/*取消登陆超链接下划线*/
+#login{
+    text-decoration:none
+}
+/*取消注册超链接下划线*/
+#register{
+  text-decoration:none
+}
+
+/*设置span的父标签字体大小为0,为了是子元素span换行后不被解析为空格，要求p中的子元素都得设置字体大小才才能显示*/
+#set-p{
+  font-size:0;  
+}
+/*宣传图*/
+#propaganda{
+    height: 400px;
+    width: 100%;
+    background-image: linear-gradient(to right, rgb(19, 122, 74) , rgb(174, 179, 109));
+    font-weight:bold ;
+    position: relative;
+}
+/*宣传图中的iPhone图鼠标移动其身时放大缩小*/
+.img-slogan-iphone:hover{
+  transform: scale(1.2);
+}
+/*爱手机网slogan部分*/
+#div-propaganda{
+ position: relative;
+ top: 50%;
+ transform: translateY(-50%);
+ padding-left: 70px;
+}
+#span01-propaganda{
+font-size: 35px;
+color:orangered;
+}
+#span02-propaganda{
+font-size: 29px;
+color: aliceblue;
+}
+
+/*手机logo大小*/
+#phone-logo-img-size{
+  height: 30px;
+  width: 70px;
+}
+/*取消手机名称链接下划线*/
+#phone-logo{
+  text-decoration:none
+}
+/*品质保障模块图片*/
+#quality-assurance{
+  height: 100px;
+  width: 100px;
+}
+/*品质保障文字01*/
+#quality-assurance-font01{
+  font-size: 16px;
+  color: #333;
+}
+/*品质保障文字02*/
+#quality-assurance-font02{
+  color: #777;
+  font-size: 14px;
+  font-weight: 100;
+}
+/*第一个圆形div*/
+#div-circular01{
+  background: linear-gradient(153deg,#ff93a8,#fd5a6f);width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 42px;
+  color: #fff;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+/*第二个圆形div*/
+#div-circular02{
+  background: linear-gradient(153deg,#4cf1d2,#25dfa6);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 42px;
+  color: #fff;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+/*第三个圆形div*/
+#div-circular03{
+  background: linear-gradient(153deg,#ffe379,#ffc244);
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 42px;
+  color: #fff;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
+/*检测样机图相关css*/
+.pic .img {
+  display: flex;
+  padding-bottom: 96px;
+  cursor: pointer;  
+  transition: all 0.6s;
+}
+/*让图片放大缩小的code，鼠标移动到上时*/
+#checking-phone01:hover{  
+  transform: scale(1.2);  
+}
+#checking-phone02:hover{  
+  transform: scale(1.2);  
+}
+#checking-phone03:hover{  
+  transform: scale(1.2);  
+}
+#checking-phone04:hover{  
+  transform: scale(1.2);  
+}
+.pic>div {
+    width: 1190px;
+    margin: 0 auto;
+    text-align: center;
+}
+.pic .img>div>div {
+    overflow: hidden;
+    border-radius: 16px;
+    margin: 8px;
+    float: left;
+    font-size: 0;
+    /* -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -webkit-transform: translate3d(0,0,0);
+    -moz-transform: translate3d(0,0,0); */
+}
+.phonetr1 {
+    width: 396px;
+}
+.phonetr2 {
+    width: 254px;
+}
+.phonetr4>img, .pic .img>div>div>img {
+    width: 100%;
+    cursor: pointer;
+    transition: all .3s;
+}
+.phonetr4 {
+    margin: 8px;
+    border-radius: 16px;
+    width: 964px;
+    font-size: 0;
+    overflow: hidden;
+}
+/*合作伙伴图片鼠标指向时缩放放大*/
+#friendly-img img:hover{
+  transform: scale(1.2);
+}
+/*回到顶部按钮相关css*/
+.arrow{
+border: 9px solid transparent;
+border-bottom-color: #00CC99;
+width: 0px;
+height: 0px;
+top:0px
+}
+.stick{
+    width: 8px;
+    height: 14px;
+    border-radius: 1px;
+    background-color: #00CC99;
+    top:15px;
+}
+#back_top div{
+    position: absolute;
+    margin: auto;
+    right: 0px;
+    left: 0px;
+}
+#back_top{
+    background-color: #dddddd;
+    height: 38px;
+    width: 38px;
+    border-radius: 3px;
+    display: block;
+    cursor: pointer;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    display: none;
+}
+/*模态框中输入框宽度*/
+.form-control{
+  width: 300px;
+}
+/*模态框中表单居中*/
+.modal-body{
+  margin-top: 20px;
+  margin-left: 13%;
+}

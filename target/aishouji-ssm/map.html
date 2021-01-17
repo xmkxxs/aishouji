@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+<head>
+    <meta charset="UTF-8">
+    <title>Map</title>
+    <style type="text/css">
+        html{height:100%}
+        body{height:100%;margin:0px;padding:0px}
+        #container{
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            font-family: "微软雅黑";
+        }
+    </style>
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=1.0&&type=webgl&ak=你的百度API AK码"></script>
+</head>
+<body>
+
+<div id="container"></div>
+
+<script>
+    var map = new BMapGL.Map("container");
+    //地图默认显示哪儿
+    var point = new BMapGL.Point(118.94120, 32.13932);
+    map.centerAndZoom(point, 17); //17是视角缩放大小
+    //开启鼠标可缩放
+    map.enableScrollWheelZoom(true);
+    //添加标记点
+    var marker = new BMapGL.Marker(new BMapGL.Point(118.94853, 32.1335));
+    map.addOverlay(marker);
+
+</script>
+
+</body>
+</html>

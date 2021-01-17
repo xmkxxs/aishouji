@@ -1,0 +1,336 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+
+    <mapper namespace="com.xm.dao.ProductMapper">
+
+        <!--查询所有商品信息    ORDER BY RAND()将查询结果打乱顺序-->
+        <select id="getData" resultType="com.xm.bean.Product">
+            select * from tb_product ORDER BY RAND()
+        </select>
+
+        <!--条件查询苹果商品-->
+        <select id="getApple" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=1
+        </select>
+
+        <!--条件查询三星商品-->
+        <select id="getSamsung" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=2
+        </select>
+
+        <!--条件查询华为商品-->
+        <select id="getHuawei" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=3
+        </select>
+
+        <!--条件查询小米商品-->
+        <select id="getXiaomi" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=4
+        </select>
+
+        <!--条件查询oppo商品-->
+        <select id="getOppo" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=5
+        </select>
+
+        <!--条件查询vivo商品-->
+        <select id="getVivo" resultType="com.xm.bean.Product">
+            select * from tb_product where p_brand_id=6
+        </select>
+
+        <!--条件查询品牌的不限-->
+        <select id="getBrandUnlimited" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_brand_id=1 OR p_brand_id=2 OR p_brand_id=3 OR p_brand_id=4 OR p_brand_id=5 OR p_brand_id=6
+        </select>
+
+        <!--条件查询成色99新-->
+        <select id="getjiujiu" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=99
+        </select>
+
+        <!--条件查询成色95新-->
+        <select id="getjiuwu" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=95
+        </select>
+
+        <!--条件查询成色9新-->
+        <select id="getjiu" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=9
+        </select>
+
+        <!--条件查询成色8新-->
+        <select id="getba" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=8
+        </select>
+
+        <!--条件查询成色不限-->
+        <select id="getLevelUnlimited" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=99 OR p_level=95 OR p_level=9 OR p_level=8
+        </select>
+
+        <!--条件查询储存512G-->
+        <select id="getwuyier" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_size=512
+        </select>
+
+        <!--条件查询储存256G-->
+        <select id="geterwuliu" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_size=256
+        </select>
+
+        <!--条件查询储存128G-->
+        <select id="getyierba" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_size=128
+        </select>
+
+        <!--条件查询储存64G-->
+        <select id="getliusi" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_size=64
+        </select>
+
+        <!--条件查询存储不限-->
+        <select id="getSizeUnlimited" resultType="com.xm.bean.Product">
+             SELECT * FROM tb_product WHERE p_size=512  OR p_size=256 OR p_size=128 OR p_size=64
+        </select>
+
+        <!--条件查询价格0-1499-->
+        <select id="getlingdaoyisijiujiu" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=0 AND p_price<=1499-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 0 AND p_price &lt;= 1499
+        </select>
+
+        <!--条件查询价格0-1499-->
+        <select id="getyiwulinglingdaoyijiujiujiu" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=1500 AND p_price<=1999-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 1500 AND p_price &lt;= 1999
+        </select>
+
+        <!--条件查询价格0-1499-->
+        <select id="geterlinglinglingdaoerjiujiujiu" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=2000 AND p_price<=2999-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 2000 AND p_price &lt;= 2999
+        </select>
+
+        <!--条件查询价格0-1499-->
+        <select id="getsanlinglinglingdaosanjiujiujiu" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=3000 AND p_price<=3999-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 3000 AND p_price &lt;= 3999
+        </select>
+
+        <!--条件查询价格>4000-->
+        <select id="getdayusilinglingling" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=4000-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 4000
+        </select>
+
+        <!--条件查询价格不限-->
+        <select id="getPriceUnlimited" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_price>=0 AND p_price<=1499 OR p_price>=1500 AND p_price<=1999 OR p_price>=2000 AND p_price<=2999 OR p_price>=3000 AND p_price<=3999 OR p_price>=4000-->
+            SELECT * FROM tb_product WHERE p_price &gt;= 0 AND p_price &lt;= 1499 OR p_price &gt;= 1500 AND p_price &lt;= 1999 OR p_price &gt;= 2000 AND p_price &lt;= 2999 OR p_price &gt;= 3000 AND p_price &lt;= 3999 OR p_price &gt;= 4000
+        </select>
+
+
+        <!--组合条件查询品牌和成色-->
+        <select id="getBrandAndLevel" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_brand_id=1 AND p_level=99-->
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND p_level=#{pLevel}
+        </select>
+
+        <!--组合条件查询品牌和存储-->
+        <select id="getBrandAndSize" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_brand_id=1 AND p_size=256-->
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND p_size=#{pSize}
+        </select>
+
+        <!--组合条件查询品牌和价格-->
+        <select id="getBrandAndPrice" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_brand_id=1 AND p_price=0-1499-->
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--组合条件查询成色和存储-->
+        <select id="getLevelAndSize" resultType="com.xm.bean.Product">
+            <!--SELECT * FROM tb_product WHERE p_level=99 AND p_size=128-->
+            SELECT * FROM tb_product WHERE p_level=#{pLevel} AND p_size=#{pSize}
+        </select>
+
+        <!--组合条件查询成色和价格-->
+        <select id="getLevelAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=#{pLevel} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--组合条件查询存储和价格-->
+        <select id="getSizeAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_size=#{pSize} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--三条件查询 品牌 成色和存储-->
+        <select id="getBrandAndLevelAndSize" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND p_level=#{pLevel} AND p_size=#{pSize}
+        </select>
+
+        <!--三条件查询 品牌 成色和价格-->
+        <select id="getBrandAndLevelAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND p_level=#{pLevel} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--三条件查询 品牌 存储和价格-->
+        <select id="getBrandAndSizeAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} AND p_size=#{pSize} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--三条件查询 成色 存储和价格-->
+        <select id="getLevelAndSizeAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_level=#{pLevel} AND p_size=#{pSize} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+        <!--四条件查询 品牌，成色，存储，价格-->
+        <select id="getBrandAndLevelAndSizeAndPrice" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE p_brand_id=#{pBrandId} and p_level=#{pLevel} AND p_size=#{pSize} AND
+            <if test="pPrice &gt;= 0 and pPrice &lt;= 1499">
+                p_price &gt;= 0 AND p_price &lt;= 1499
+            </if>
+
+            <if test="pPrice &gt;= 1500 and pPrice &lt;= 1999">
+                p_price &gt;= 1500 AND p_price &lt;= 1999
+            </if>
+
+            <if test="pPrice &gt;= 2000 and pPrice &lt;= 2999">
+                p_price &gt;= 2000 AND p_price &lt;= 2999
+            </if>
+
+            <if test="pPrice &gt;= 3000 and pPrice &lt;= 3999">
+                p_price &gt;= 3000 AND p_price &lt;= 3999
+            </if>
+
+            <if test="pPrice &gt;= 4000">
+                p_price &gt;= 4000
+            </if>
+        </select>
+
+
+        <!--根据id查询此id商品具体信息-->
+        <select id="getProductById" resultType="com.xm.bean.Product">
+            SELECT * FROM tb_product WHERE id=#{id}
+        </select>
+
+        <!--根据品牌id查询此品牌id商品的描述-->
+        <select id="getProductDescribeById" resultType="String">
+             SELECT p_brand_describe FROM tb_brand WHERE p_brand_id=#{id}
+        </select>
+
+    </mapper>
