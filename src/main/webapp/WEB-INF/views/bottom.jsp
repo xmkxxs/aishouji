@@ -14,7 +14,7 @@
             </br></br></br>
         </div>
 
-        <div><p style="color: #b8b8b8;text-align: center;">© 南京信息职业技术学院仙林校区原4#1单元402A室徐铭  版权所有</p></div>
+        <div><p style="color: #b8b8b8;text-align: center;">© 南京信息职业技术学院仙林校区原*******  版权所有</p></div>
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1 col-xs-5 col-xs-offset-1"><p style="color: #b8b8b8;">热线电话： 888-888-888 （周一至周日 8:00-21:00）</p></div>
